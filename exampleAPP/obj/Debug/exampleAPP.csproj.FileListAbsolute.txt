@@ -1,0 +1,11 @@
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\bin\Debug\exampleAPP.exe.config
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\bin\Debug\exampleAPP.exe
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\bin\Debug\exampleAPP.pdb
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.csproj.AssemblyReference.cache
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.EmployeeForm.resources
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.Form1.resources
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.Properties.Resources.resources
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.csproj.GenerateResource.cache
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.csproj.CoreCompileInputs.cache
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.exe
+C:\Users\gabri\source\repos\13Sep\AppComputoII\exampleAPP\obj\Debug\exampleAPP.pdb
