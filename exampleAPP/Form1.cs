@@ -12,6 +12,9 @@ namespace exampleAPP
 {
     public partial class Form1 : Form
     {
+        //declare property to send employee's code
+        public static string cod = "";
+
         public Form1()
         {
             InitializeComponent();
@@ -80,5 +83,69 @@ namespace exampleAPP
             }
         }
 
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            //call to the methods to clean the dgv
+            clearDataGridView();
+            filterByDepartment();
+
+        }
+
+        //method to clean the dgv
+        private void clearDataGridView()
+        {
+            dgData.Columns.Clear();
+            dgData.Rows.Clear();
+        }
+
+
+        //method to filter the data in the dgv
+        private void filterByDepartment()
+        {
+            var employeesByDepartment =
+                (
+                    from employee in Employee.GetEmployees()
+                    join department in Department.GetDepartments() on
+                    employee.deparmentId equals department.deparmentId //comparision operator
+                    where department.deparmentName == cboDepartments.Text //filter operator
+                    orderby employee.firstName descending //order names by descending order
+                    select new 
+                    { 
+                        employeeId = employee.employeeId,
+                        employeeFullName = employee.firstName  + "" + employee.lastName,
+                        employeeAge = DateTime.Now.Year - employee.birthDate.Year,
+                        employeeHireDate = employee.hire_date.Year
+                    }
+
+                ).ToList();
+
+            //fill
+            dgData.Columns.Add("employeeId", "CODIGO EMPLEADO");
+            dgData.Columns.Add("employeeFullName", "NOMBRE COMPLETO");
+            dgData.Columns.Add("employeeAge", "EDAD");
+            dgData.Columns.Add("employeeHireDate", "AñO DE CONTRATO");
+
+            foreach (var data in employeesByDepartment)
+                dgData.Rows.Add(
+                        data.employeeId,
+                        data.employeeFullName,
+                        data.employeeAge,
+                        data.employeeHireDate
+                    );
+        }
+
+        private void btnShowAll_Click(object sender, EventArgs e)
+        {
+            clearDataGridView();
+            fillDataGridView();
+        }
+
+        private void dgData_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //get the value 
+            cod = dgData.CurrentRow.Cells[0].Value.ToString();
+            EmployeeForm formEmployee = new EmployeeForm();
+            formEmployee.Show();
+        }
     }
 }
